@@ -1,0 +1,8 @@
+[
+  { "nivel": "Técnico", "nombre": "Técnico en redes básicas", "area": "Electrónica" },
+  { "nivel": "Tecnólogo", "nombre": "Tecnólogo en análisis de datos", "area": "Matemáticas" },
+  { "nivel": "Técnico", "nombre": "Técnico en programación básica", "area": "Software" },
+  { "nivel": "Tecnólogo", "nombre": "Tecnólogo en desarrollo de software", "area": "Software" },
+  { "nivel": "Técnico", "nombre": "Técnico en electrónica básica", "area": "Electrónica" },
+  { "nivel": "Tecnólogo", "nombre": "Tecnólogo en lógica matemática", "area": "Matemáticas" }
+]

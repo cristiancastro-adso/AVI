@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - AVI Test Vocacional</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    /* Loader */
+    .loader-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loader-img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader" class="loader-overlay">
+    <img src="./imagenes/loading.gif" alt="Cargando..." class="loader-img">
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html" class="loader-link">
+          <img src="./imagenes/logoAVI.png" alt="AVI Logo" class="logo-img">
+        </a>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link loader-link">Inicio</a></li>
+          <li><a href="login.html" class="nav-link login-btn loader-link">Ingresar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Formulario de Registro -->
+  <section class="auth-section">
+    <div class="container">
+      <div class="auth-container">
+        <div class="auth-header">
+          <h1>Crear Cuenta</h1>
+          <p>Regístrate para acceder al test vocacional AVI</p>
+        </div>
+
+        <form id="registroForm" class="auth-form">
+          <div class="form-group">
+            <label for="identificacion">Número de Identificación *</label>
+            <input type="text" id="identificacion" name="identificacion" required>
+            <span class="error-message" id="identificacion-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="nombreCompleto">Nombre Completo *</label>
+            <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+            <span class="error-message" id="nombre-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="correo">Correo Electrónico *</label>
+            <input type="email" id="correo" name="correo" required>
+            <span class="error-message" id="correo-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <span class="error-message" id="telefono-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Contraseña *</label>
+            <input type="password" id="password" name="password" required>
+            <div class="password-requirements">
+              <small>La contraseña debe tener:</small>
+              <ul>
+                <li id="length-req">Mínimo 8 caracteres</li>
+                <li id="uppercase-req">Al menos una letra mayúscula</li>
+                <li id="number-req">Al menos un número</li>
+                <li id="special-req">Al menos un carácter especial</li>
+              </ul>
+            </div>
+            <span class="error-message" id="password-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirmar Contraseña *</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <span class="error-message" id="confirm-password-error"></span>
+          </div>
+
+          <button type="submit" class="auth-button">Registrarse</button>
+        </form>
+
+        <div class="auth-footer">
+          <p>¿Ya tienes cuenta? <a href="login.html" class="loader-link">Inicia sesión aquí</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Ocultar loader al cargar
+    window.addEventListener("load", () => {
+      document.getElementById("loader").style.display = "none";
+    });
+
+    // Mostrar loader al hacer clic en enlaces
+    document.querySelectorAll("a.loader-link").forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.getElementById("loader").style.display = "flex";
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 700); // tiempo de visualización
+      });
+    });
+  </script>
+
+  <script src="./js/registro.js"></script>
+</body>
+</html>

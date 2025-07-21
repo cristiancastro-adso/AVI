@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AVI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .loader-container {
+      position: fixed;
+      z-index: 9999;
+      background-color: #fff;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loader-container img {
+      width: 200px;
+      height: 200px;
+    }
+
+    body.loading {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="loading">
+  <!-- Loader -->
+  <div class="loader-container" id="loader">
+    <img src="./imagenes/loading.gif" alt="Cargando..." />
+  </div>
+
+  <!-- Header con logo y menú -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="./imagenes/logoAVI.png" alt="AVI Logo" class="logo-img" />
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="bienvenida-test.html" class="nav-link">Test</a></li>
+          <li><a href="programas.html" class="nav-link">Programas</a></li>
+          <li><a href="mapa.html" class="nav-link">Mapa</a></li>
+          <li><a href="login.html" class="nav-link login-btn">Ingresar</a></li>
+          <li><a href="registro.html" class="nav-link register-btn">Registro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner de bienvenida -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Bienvenido a AVI</h1>
+        <p class="hero-text">
+          ¿Buscas estudiar alguno de los técnicos o tecnólogos que ofrece el SENA? <br />
+          AVI te ayuda a evaluar tus talentos y habilidades para escoger el programa de formación más adecuado para ti.
+        </p>
+        <button class="cta-button" onclick="window.location.href='registro.html'">Regístrate Ahora</button>
+      </div>
+      <div class="hero-image">
+        <img src="./imagenes/aprendices.jpg" alt="Aprendices SENA" class="hero-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de información adicional -->
+  <section class="info-section">
+    <div class="container">
+      <h2 class="section-title">¿Cómo funciona AVI?</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="card-icon">📝</div>
+          <h3>Realiza el Test</h3>
+          <p>Responde preguntas sobre tus intereses, habilidades y preferencias profesionales.</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">🎯</div>
+          <h3>Obtén Resultados</h3>
+          <p>Recibe recomendaciones personalizadas de programas SENA que se ajusten a tu perfil.</p>
+        </div>
+        <div class="info-card">
+          <div class="card-icon">🚀</div>
+          <h3>Inicia tu Carrera</h3>
+          <p>Encuentra información detallada sobre los programas y cómo aplicar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de programas destacados -->
+  <section class="programs-preview">
+    <div class="container">
+      <h2 class="section-title">Programas Destacados</h2>
+      <div class="programs-grid">
+        <div class="program-card">
+          <h4>Desarrollo de Software</h4>
+          <p>Aprende a crear aplicaciones y sistemas informáticos.</p>
+        </div>
+        <div class="program-card">
+          <h4>Administración de Empresas</h4>
+          <p>Desarrolla habilidades gerenciales y empresariales.</p>
+        </div>
+        <div class="program-card">
+          <h4>Mecatrónica Industrial</h4>
+          <p>Combina mecánica, electrónica y programación.</p>
+        </div>
+        <div class="program-card">
+          <h4>Diseño Gráfico</h4>
+          <p>Crea contenido visual y comunicación efectiva.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 AVI. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('load', function () {
+      document.getElementById('loader').style.display = 'none';
+      document.body.classList.remove('loading');
+    });
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
